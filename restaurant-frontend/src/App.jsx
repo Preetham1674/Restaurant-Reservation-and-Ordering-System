@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL =
+  import.meta.env.VITE_APP_BACKEND_URL || "http://localhost:5000/api";
 
 function Reservations() {
   const [formData, setFormData] = useState({

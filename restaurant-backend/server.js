@@ -28,6 +28,9 @@ async function initializeDatabase() {
       password: process.env.DB_PASSWORD,
     });
     await tempConnection.query(
+      `DROP DATABASE IF EXISTS \`${process.env.DB_NAME}\`;`
+    );
+    await tempConnection.query(
       `CREATE DATABASE IF NOT EXISTS \`${process.env.DB_NAME}\`;`
     );
     await tempConnection.end();
@@ -72,56 +75,56 @@ async function initializeDatabase() {
           "Crispy pastry with spiced potatoes.",
           120.0,
           "Appetizer",
-          "https://placehold.co/600x400/FFC300/000000?text=Samosa",
+          "https://restaurant-reservation-and-ordering-system.s3.us-east-1.amazonaws.com/samosa.jpg",
         ],
         [
           "Paneer Tikka",
           "Cottage cheese cubes grilled.",
           320.0,
           "Appetizer",
-          "https://placehold.co/600x400/f39c12/FFFFFF?text=Paneer+Tikka",
+          "https://restaurant-reservation-and-ordering-system.s3.us-east-1.amazonaws.com/paneer_tikka.jpg",
         ],
         [
           "Dal Makhani",
           "Creamy black lentils.",
           350.0,
           "Main Course",
-          "https://placehold.co/600x400/FF5733/FFFFFF?text=Dal+Makhani",
+          "https://restaurant-reservation-and-ordering-system.s3.us-east-1.amazonaws.com/dal_makhani.jpg",
         ],
         [
           "Chana Masala",
           "Spicy chickpea curry.",
           330.0,
           "Main Course",
-          "https://placehold.co/600x400/f1c40f/000000?text=Chana+Masala",
+          "https://restaurant-reservation-and-ordering-system.s3.us-east-1.amazonaws.com/cholemasala.jpg",
         ],
         [
           "Roti",
           "Whole wheat flatbread.",
           40.0,
           "Breads",
-          "https://placehold.co/600x400/95a5a6/FFFFFF?text=Roti",
+          "https://restaurant-reservation-and-ordering-system.s3.us-east-1.amazonaws.com/roti.jpg",
         ],
         [
           "Naan",
           "Soft tandoor flatbread.",
           80.0,
           "Breads",
-          "https://placehold.co/600x400/F0FF33/000000?text=Naan",
+          "https://restaurant-reservation-and-ordering-system.s3.us-east-1.amazonaws.com/butter_naan.jpg",
         ],
         [
           "Gulab Jamun",
           "Milk-solid balls in syrup.",
           160.0,
           "Desserts",
-          "https://placehold.co/600x400/7d3c98/FFFFFF?text=Gulab+Jamun",
+          "https://restaurant-reservation-and-ordering-system.s3.us-east-1.amazonaws.com/gulab_jamun.jpg",
         ],
         [
           "Mango Lassi",
           "Yogurt-based mango shake.",
           150.0,
           "Beverages",
-          "https://placehold.co/600x400/F1C40F/000000?text=Mango+Lassi",
+          "https://restaurant-reservation-and-ordering-system.s3.us-east-1.amazonaws.com/mango-lassi.jpg",
         ],
       ];
       await connection.query(
